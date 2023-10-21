@@ -32,7 +32,7 @@ def generate_playlist(src_dir: str, start_date: date = date.today(), max_files: 
 
 def copy_files(src_names: [str], tgt_dir: str, tgt_name: str):
     for idx, fname in enumerate(src_names):
-        sfx = os.path.splitext(fname)[-1]
+        sfx = os.path.splitext(fname)[-1].lower()
         tgt = os.sep.join([tgt_dir, "{}{}{}".format(tgt_name, idx+1, sfx)])
         shutil.copyfile(fname, tgt)
         print(f"Copied {fname} to {tgt}")
