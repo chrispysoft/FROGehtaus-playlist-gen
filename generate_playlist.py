@@ -5,11 +5,11 @@ import os
 import re
 import shutil
 
-
-SRC_DIR = "./FROgehtaus Originalfiles"  # path to source directory
-TGT_DIR = "./FROgehtaus for PL"         # path to target directory
-TGT_NAME = "FROgehtaus"                 # basename of copied file
-MAX_FILES = 10                          # max files to copy
+CUR_DIR = os.path.dirname(__file__)
+SRC_DIR = CUR_DIR + "/FROgehtaus Originalfiles"  # path to source directory
+TGT_DIR = CUR_DIR + "/FROgehtaus for PL"         # path to target directory
+TGT_NAME = "FROgehtaus"                          # basename of copied file
+MAX_FILES = 10                                   # max files to copy
 
 
 def generate_playlist(src_dir: str, start_date: date = date.today(), max_files: int = MAX_FILES) -> list[str]:
