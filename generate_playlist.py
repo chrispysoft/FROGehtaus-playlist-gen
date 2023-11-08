@@ -8,7 +8,7 @@ import shutil
 
 SRC_DIR = "./FROgehtaus Originalfiles"  # path to source directory
 TGT_DIR = "./FROgehtaus for PL"         # path to target directory
-TGT_NAME = "FROGehtaus"                 # basename of copied file
+TGT_NAME = "FROgehtaus"                 # basename of copied file
 MAX_FILES = 10                          # max files to copy
 
 
