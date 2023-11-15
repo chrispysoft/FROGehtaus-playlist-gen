@@ -10,6 +10,7 @@ SRC_DIR = CUR_DIR + "/FROgehtaus Originalfiles"  # path to source directory
 TGT_DIR = CUR_DIR + "/FROgehtaus for PL"         # path to target directory
 TGT_NAME = "FROgehtaus"                          # basename of copied file
 MAX_FILES = 10                                   # max files to copy
+FALLBACK = SRC_DIR + "/Radio FRO beeps.mp3"      # file to copy to match MAX_FILES
 
 
 def generate_playlist(src_dir: str, start_date: date = date.today(), max_files: int = MAX_FILES) -> list[str]:
@@ -39,4 +40,11 @@ def copy_files(src_names: [str], tgt_dir: str, tgt_name: str):
 
 
 playlist = generate_playlist(SRC_DIR)
+
+# add fallback file if list is too short
+delta = MAX_FILES - len(playlist)
+if delta > 0:
+    for i in range(delta):
+        playlist.append(FALLBACK)
+
 copy_files(playlist, TGT_DIR, TGT_NAME)
